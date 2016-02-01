@@ -1,0 +1,11 @@
+defineTest(qtmplAddLibrary) {
+    LIBNAME = $$1
+    isEmpty(LIBNAME):error(LIBNAME must be set)
+    INCLUDEPATH += $$SOURCE_TREE/src/$$LIBNAME
+    DEPENDPATH += $$SOURCE_TREE/src/$$LIBNAME
+    LIBS *= -L$$BUILD_TREE/lib
+    LIBS += -l$$LIBNAME
+    export(INCLUDEPATH)
+    export(DEPENDPATH)
+    export(LIBS)
+}

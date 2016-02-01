@@ -1,0 +1,20 @@
+load(qtmpl_installs.prf)
+load(qtmpl_functions.prf)
+
+!verbose:CONFIG += silent
+
+CONFIG(debug, debug|release) {
+    OBJECTS_DIR = debug
+    MOC_DIR = debug
+    RCC_DIR = debug
+    UI_DIR = debug
+} else {
+    OBJECTS_DIR = release
+    MOC_DIR = release
+    RCC_DIR = release
+    UI_DIR = release
+}
+
+DEFINES += QTMPL_INSTALL_BINS=\\\"$$QTMPL_INSTALL_BINS\\\"
+DEFINES += QTMPL_INSTALL_LIBS=\\\"$$QTMPL_INSTALL_LIBS\\\"
+DEFINES += QTMPL_INSTALL_PLUGINS=\\\"$$QTMPL_INSTALL_PLUGINS\\\"
